@@ -1,0 +1,26 @@
+name: Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  PROFILE: Files
+  ENVIRONMENT: PROD
+
+jobs:
+  Deployment:
+    runs-on: ubuntu-latest
+    environment: PROD
+    container:
+       image: ghcr.io/pbi-tools/pbi-tools-core:latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with: 
+       lfs: 'true'
+
+    - name: pbi-tools deploy
+       run: /app/pbi-tools/pbi-tools.core deploy . "$PROFILE" "$ENVIRONMENT"
+       env:
+         PBI_CLIENT_SECRET: "m.q8Q~PxzBTFlveJ5rM~7LQJriCQPLswnvgv-bS4"
