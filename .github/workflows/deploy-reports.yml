@@ -21,6 +21,6 @@ jobs:
        lfs: 'true'
 
     - name: pbi-tools
-       run: /app/pbi-tools/pbi-tools.core deploy . "$PROFILE" "$ENVIRONMENT" -whatIf
+       run: /app/pbi-tools/pbi-tools.core deploy . "$PROFILE" "$ENVIRONMENT"
        env:
          PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
