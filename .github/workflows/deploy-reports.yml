@@ -21,6 +21,6 @@ jobs:
        lfs: 'true'
 
     - name: pbi-tools deploy
-       run: /app/pbi-tools/pbi-tools.core deploy . Files PROD
+       run: /app/pbi-tools/pbi-tools.core deploy . "Files" "PROD"
        env:
          PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
