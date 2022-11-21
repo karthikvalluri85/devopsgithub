@@ -8,9 +8,7 @@ on:
 env:
   PROFILE: Files
   ENVIRONMENT: PROD
-# Csdsdi
-# j
-
+  
 jobs:
   Deployment:
     runs-on: ubuntu-latest
